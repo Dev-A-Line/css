@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en" data-theme=default>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="bmenu.css">
+	<title>Nkera</title>
+</head>
+<body>
+<div class="app">
+
+<header class="header">
+	<input id="menuToggle" type="checkbox"  hidden>
+	<input id="navToggle" type="checkbox" checked  hidden >
+	<div class="heder__inner">
+		<div class="header__center">
+		<div class="header__content">
+			<a class="header__brand" href="/" aria-label="Главная страница">
+				<img class="header__logo" src="https://laparet.ru/ui/v2/i/logo.svg" alt="logo" width="190" height="28">
+			</a>
+			<a class="header__geo" href="tel:8961475644">Ставрополь <span>+7 (895) 515-15-12</span></a>
+			<div class="header__search ">
+				<form class="header__searchForm" action="/search/">
+					<button class="header__searchSubmit" aria-label="Найти" data-event="qSearchSubmit" type="submit">
+						<svg xmlns="http://www.w3.org/2000/svg" class="icon icon--search" viewBox="0 0 15 15" width="24" height="24" fill="none">
+							<path d="M13.9759 13.2896L10.8977 10.2121C11.7191 9.22808 12.2135 7.9629 12.2135 6.58403C12.2135 3.45661 9.66932 0.916016 6.54424 0.916016C3.4162 0.916016 0.875 3.45958 0.875 6.58403C0.875 9.70852 3.41913 12.252 6.54424 12.252C7.92342 12.252 9.18888 11.7577 10.1731 10.9365L13.2514 14.0141C13.3497 14.1124 13.4823 14.166 13.6137 14.166C13.7425 14.166 13.8765 14.1169 13.9768 14.0133C14.1747 13.8145 14.1744 13.4881 13.9759 13.2896ZM1.90056 6.58403C1.90056 4.02432 3.9838 1.94429 6.54136 1.94429C9.10171 1.94429 11.1822 4.0271 11.1822 6.58403C11.1822 9.14106 9.10161 11.2267 6.54136 11.2267C3.9839 11.2267 1.90056 9.14384 1.90056 6.58403Z" stroke-width="0.25"></path>
+						</svg>
+					</button>
+					<input class="header__searchInput" type="text" name="q" placeholder="Поиск" value="" autocomplete="off" aria-label="Поиск" pattern="[A-Za-zА-Яа-яЁё0-9]" required="">
+					<button class="header__searchCollapse hidden" aria-label="Свернуть поиск" type="reset" data-event="qSearchCollapse"></button>
+				</form>
+			</div>
+			<div class="header__nav">
+				<div class="header__navItem">
+					<label class="header__navLink header__navLinkMore"  for="navToggle">
+						<span class="header__navLinkText">Каталог товаров</span>
+					</label>
+				</div>
+				<div class="header__navItem">
+					<a class="header__navLink" href="/buy/">
+						<span class="header__navLinkText">Где купить?</span>
+					</a>
+				</div>
+				<div class="header__navItem header__navItem--active">
+					<a class="header__navLink header__navLink--last" href="/basket/"><span class="header__navLinkText">Корзина</span>
+					</a>
+				</div>
+			</div>
+			<a class="header__basketBtn" aria-label="корзина" href="/basket/">
+				<span class="header__basketCounter hidden" data-basket-counter="">0</span>
+				<svg xmlns="http://www.w3.org/2000/svg" class="icon icon--basket" width="29" height="27" fill="none">
+					<path d="M28.66 5.49a1.09 1.09 0 0 0-.87-.42H6.26L5.28.87A1.1 1.1 0 0 0 4.2 0H1.05C.45 0 0 .24 0 .87c0 .6.44.75 1.06.75h2.6l.54.61 3.07 14.83c.12.5.92 1.24 1.43 1.24h16.4c.5 0 .95-.35 1.06-.85l2.71-11c.08-.33 0-.68-.2-.96h-.01zM24.9 16.8H8.7L6.74 6.74h20.51l-1.07 5.2-1.29 4.86h.01z"></path><path fill-rule="evenodd" d="M23.5 26a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zm0-1.25a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5zM8.5 26a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zm0-1.25a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5z"></path>
+				</svg>
+			</a>
+			<label class="header__menuBtn" aria-label="меню" for="menuToggle"><span class="header__menuBurger"></span></label>
+		</div>
+	</div>
+</div>
+	<div class="header__searchResult">
+
+	</div>
+
+	<div class="menu">
+		<div class="menu__content">
+			<div class="container">
+				<div class="menu__list">
+					<a class="menu__item" href="/collection/">Каталог товаров ></a></a>
+					<a class="menu__item" href="/collection/">Коллекции</a>					<a class="menu__item" href="/about/">О Компании</a><a class="menu__item" href="/advices/">Полезные советы</a><a class="menu__item" href="/news/">Новости</a>
+					<a class="menu__item" href="/dealers/">Дилерам</a></div>
+					<button class="btn btn--full" data-event="modal" data-event-params="consultation">Заказать консультацию</button>
+				</div>
+			</div>
+		</div>
+
+
+<nav class="nav">
+	<div class="nav__content">
+		<div class="container container--nav">
+
+
+<!--  -->
+
+
+
+
+
+
+
+
+
+
+
+<nav class="bmenu panel animated">
+	<a href=#/home.html><span class=triangle-origin>Home</span></a>
+	<a href=#/markets.html><span class=triangle-origin>Markets</span></a>
+	<a href=#/technology.html><span class=triangle-origin>Technology</span></a>
+	<a href=#/politics.html><span class=triangle-origin>Politics</span></a>
+	<a href=#/pursuits.html><span class=triangle-origin>Pursuits</span></a>
+	<a href=#/opinion.html><span class=triangle-origin>Opinion</span></a>
+	<a href=#/businessweek.html><span class=triangle-origin>Businessweek</span></a>
+	<hr>
+	<a href=#/video.html><span class=triangle-origin>Video</span></a>
+	<a href=#/audio.html><span class=triangle-origin>Audio</span></a>
+	<hr>
+	<a class=no-panel href=#/newsletters.html>Newsletters</a>
+	<a class=no-panel href=#/watchlist.html>Watchlist</a>
+	<a class=no-panel href=#/subscribe.html>Subscribe</a>
+	<a class=no-panel href=#/signin.html>Sign In</a>
+	<article class=panel>
+		<div class=column>
+			<section class=titled-group>
+					<header>Read</header>
+					<a href=#/wealth.html>Wealth</a>
+					<a href=#/crypto.html>Crypto</a>
+					<a href=#/hyperdrive.html>Hyperdrive</a>
+					<a href=#/prognosis.html>Prognosis</a>
+					<a href=#/climatechanged.html>Climate Changed</a>
+					<a href=#/equality.html>Equality</a>
+					<a href=#/billionaires.html>Billionaires</a>
+					<a href=#/graphics.html>Graphics</a>
+					<a href=#/sponsoredcontent.html>Sponsored Content</a>
+			</section>
+			<section class=titled-group>
+					<header>Watch</header>
+					<a href=#/thedavidrubensteinshow.html>The David Rubenstein Show</a>
+					<a href=#/brilliantideas.html>Brilliant Ideas</a>
+					<a href=#/inspirego.html>Inspire GO</a>
+			</section>
+		</div>
+		<div class=column>
+			<section class=titled-group>
+					<header>Special Reports</header>
+					<a href=#/wheretoinvest$10,000.html>Where to Invest $10,000</a>
+					<a href=#/50companiestowatchin2018.html>50 Companies to Watch in 2018</a>
+					<a href=#/what'sinsidealltheiphones.html>What's Inside All the iPhones</a>
+			</section>
+		</div>
+	</article>
+	<article class=panel>
+		<div class=column>
+			<section class=titled-group>
+					<header>Read</header>
+					<a href=#/economics.html>Economics</a>
+					<a href=#/deals.html>Deals</a>
+					<a href=#/fixedincome.html>Fixed Income</a>
+					<a href=#/etfs.html>ETFs</a>
+					<a href=#/benchmark.html>Benchmark</a>
+					<a href=#/marketsmagazine.html>Markets Magazine</a>
+			</section>
+			<section class=titled-group>
+					<header>Watch</header>
+					<a href=#/daybreak.html>Daybreak</a>
+					<a href=#/surveillance.html>Surveillance</a>
+					<a href=#/markets.html>Markets</a>
+					<a href=#/what'dyoumiss.html>What'd You Miss</a>
+			</section>
+			<section class=titled-group>
+					<header>Follow</header>
+					<a href=#/twitter.html>Twitter</a>
+					<a href=#/facebook.html>Facebook</a>
+			</section>
+		</div>
+		<div class=column>
+			<section class=titled-group>
+					<header>Data</header>
+					<a href=#/stocks.html>Stocks</a>
+					<a href=#/currencies.html>Currencies</a>
+					<a href=#/commodities.html>Commodities</a>
+					<a href=#/rates-and-bonds.html>Rates &amp; Bonds</a>
+					<a href=#/sectors.html>Sectors</a>
+					<a href=#/economiccalendar.html>Economic Calendar</a>
+			</section>
+			<section class=titled-group>
+					<header>Listen</header>
+					<a href=#/trillions.html>Trillions</a>
+					<a href=#/oddlots.html>Odd Lots</a>
+					<a href=#/surveillance.html>Surveillance</a>
+					<a href=#/benchmark.html>Benchmark</a>
+					<a href=#/p-and-l.html>P&amp;L</a>
+			</section>
+		</div>
+	</article>
+	<article class=panel>
+		<div class=column>
+			<section class=titled-group>
+					<header>Read</header>
+					<a href=#/Cybersecurity.html>Cybersecurity</a>
+					<a href=#/Startups.html>Startups</a>
+					<a href=#/AI.html>AI</a>
+					<a href=#/Mobile.html>Mobile</a>
+					<a href="#/Big+Data.html">Big Data</a>
+					<a href="#/Cloud+Computing.html">Cloud Computing</a>
+					<a href=#/U.S.html>U.S.</a>
+					<a href=#/Global.html>Global</a>
+			</section>
+			<section class=titled-group>
+					<header>Special Reports</header>
+					<a href="#/The Elon Musk Tracker.html">The Elon Musk Tracker</a>
+					<a href="#/Tesla Model 3 Tracker.html">Tesla Model 3 Tracker</a>
+			</section>  
+		</div>
+		<div class=column>
+			<section class=titled-group>
+					<header>Watch</header>
+					<a href="#/Gadgets with Gurman.html">Gadgets with Gurman</a>
+					<a href="#/Digital Defense.html">Digital Defense</a>
+					<a href="#/Bloomberg Technology TV.html">Bloomberg Technology TV</a>
+					<a href="#/Studio 1.0.html">Studio 1.0</a>
+			</section>
+			<section class=titled-group>
+					<header>Listen</header>
+					<a href=#/Decrypted.html>Decrypted</a>
+			</section>
+			<section class=titled-group>
+					<header>Follow</header>
+					<a href=#/Twitter.html>Twitter</a>
+					<a href=#/Facebook.html>Facebook</a>
+			</section>
+		</div>
+	</article>
+	<article class=panel>
+		<div class=column>
+			<section class=titled-group>
+					<header>Read</header>
+					<a href="#/2018 Women Candidates.html">2018 Women Candidates</a>
+					<a href="#/Trump Tracker.html">Trump Tracker</a>
+					<a href="#/Brexit Coverage.html">Brexit Coverage</a>
+					<a href="#/World Leaders on the Brink.html">World Leaders on the Brink</a>
+					<a href="#/2018 Pessimist's Guide.html">2018 Pessimist's Guide</a>
+			</section>
+			<section class=titled-group>
+					<header>Listen</header>
+					<a href="#/Bloomberg Law.html">Bloomberg Law</a>
+			</section>
+		</div>
+		<div class=column>
+			<section class=titled-group>
+					<header>Subscribe</header>
+					<a href="#/Balance of Power.html">Balance of Power</a>
+			</section>
+			<section class=titled-group>
+					<header>Follow</header>
+					<a href=#/Twitter.html>Twitter</a>
+					<a href=#/Facebook.html>Facebook</a>
+			</section>
+		</div>
+	</article>
+	<article class=panel>
+		<div class=column>
+			<section class=titled-group>
+					<header>Read</header>
+					<a href=#/Travel.html>Travel</a>
+					<a href=#/Autos.html>Autos</a>
+					<a href=#/Homes.html>Homes</a>
+					<a href=#/Living.html>Living</a>
+					<a href=#/Culture.html>Culture</a>
+					<a href=#/Style.html>Style</a>
+			</section>
+			<section class=titled-group>
+					<header>Special Reports</header>
+					<a href="#/London Property Prices.html">London Property Prices</a>
+					<a href="#/New York Property Prices.html">New York Property Prices</a>
+					<a href="#/How to Invest in Art.html">How to Invest in Art</a>
+					<a href="#/How to Spend Your Bonus.html">How to Spend Your Bonus</a>
+			</section>
+		</div>
+		<div class=column>
+			<section class=titled-group>
+					<header>Watch</header>
+					<a href=#/Made.html>Made</a>
+			</section>
+			<section class=titled-group>
+					<header>Follow</header>
+					<a href=#/Twitter.html>Twitter</a>
+					<a href=#/Facebook.html>Facebook</a>
+					<a href=#/Intagram.html>Intagram</a>
+			</section>
+		</div>
+	</article>
+	<article class=panel>
+		<div class=column>
+			<section class=titled-group>
+					<header>Read</header>
+					<a href=#/Editorials.html>Editorials</a>
+			</section>
+			<section class=titled-group>
+					<header>Follow</header>
+					<a href=#/Twitter.html>Twitter</a>
+					<a href=#/Facebook.html>Facebook</a>
+			</section>
+		</div>
+		<div class=column>
+			<section class=titled-group>
+					<header>Listen</header>
+					<a href="#/Masters in Business.html">Masters in Business</a>
+			</section>
+			<section class=titled-group>
+					<header>Subscribe</header>
+					<a href="#/Bloomberg Opinion Today.html">Bloomberg Opinion Today</a>
+					<a href="#/Money Stuff.html">Money Stuff</a>
+					<a href=#/Ritholtz's Reads.html>Ritholtz's Reads</a>
+					<a href="#/Early Returns.html">Early Returns</a>
+					<a href=#/Sparklines.html>Sparklines</a>
+			</section>
+		</div>
+	</article>
+	<article class=panel>
+		<div class=column>
+			<section class=titled-group>
+					<header>Special Reports</header>
+					<a href="#/Sooner Than You Think.html">Sooner Than You Think</a>
+					<a href="#/The Year Ahead: 2018.html">The Year Ahead: 2018</a>
+					<a href="#/The Bloomberg 50.html">The Bloomberg 50</a>
+			</section>
+			<section class=titled-group>
+					<header>Watch</header>
+					<a href="#/Hello World.html">Hello World</a>
+			</section>
+		</div>
+		<div class=column>
+			<section class=titled-group>
+					<header>The Magazine</header>
+					<a href=#/Subscribe.html>Subscribe</a>
+			</section>
+			<section class=titled-group>
+					<header>Follow</header>
+					<a href=#/Twitter.html>Twitter</a>
+					<a href=#/Facebook.html>Facebook</a>
+					<a href=#/Instagram.html>Instagram</a>
+			</section>
+		</div>
+	</article>
+	<article class=panel>
+		<div class=column>
+			<section class=titled-group>
+					<header>Watch Live TV</header>
+					<a href=#/US.html>US</a>
+					<a href=#/Europe.html>Europe</a>
+					<a href=#/Asia.html>Asia</a>
+					<a href=#/Australia.html>Australia</a>
+					<a href=#/Schedule+Shows.html>Schedule+Shows</a>
+			</section>
+			<section class=titled-group>
+					<header>Shows</header>
+					<a href=#/Surveillance.html>Surveillance</a>
+					<a href=#/Daybreak.html>Daybreak</a>
+					<a href=#/Markets.html>Markets</a>
+					<a href=#/What'd You Miss?.html>What'd You Miss?</a>
+					<a href="#/Bloomberg Technology.html">Bloomberg Technology</a>
+					<a href="#/All Shows....html">All Shows...</a>
+			</section>
+		</div>
+		<div class=column>
+			<section class=titled-group>
+					<header>Series</header>
+					<a href=#/QuickTake.html>QuickTake</a>
+					<a href="#/Hello World.html">Hello World</a>
+					<a href="#/The Spark.html">The Spark</a>
+			</section>
+			<section class=titled-group>
+					<header>Follow</header>
+					<a href=#/TicToc.html>TicToc</a>
+					<a href=#/YouTube.html>YouTube</a>
+					<a href=#/Twitter.html>Twitter</a>
+					<a href=#/Facebook.html>Facebook</a>
+			</section>
+		</div>
+	</article>
+	<article class=panel>
+		<div class=column>
+			<section class=titled-group>
+					<header>Bloomberg Radio</header>
+					<a href="#/Listen Live.html">Listen Live</a>
+					<a href="#/About Bloomberg Radio.html">About Bloomberg Radio</a>
+			</section>
+			<section class=titled-group>
+					<header>Podcasts</header>
+					<a href=#/Decrypted.html>Decrypted</a>
+					<a href="#/Odd Lots.html">Odd Lots</a>
+					<a href=#/Trillions.html>Trillions</a>
+					<a href=#/Benchmark.html>Benchmark</a>
+					<a href="#/Masters in Business.html">Masters in Business</a>
+					<a href=#/Surveillance.html>Surveillance</a>
+					<a href=#/P-and-L.html>P&amp;L</a>
+					<a href="#/Business of Sports.html">Business of Sports</a>
+					<a href="#/Coast to Coast.html">Coast to Coast</a>
+					<a href="#/Bloomberg Law.html">Bloomberg Law</a>
+					<a href="#/All Podcasts….html">All Podcasts…</a>
+			</section>
+		</div>
+	</article>
+	<article class=panel>
+		<div class=column>
+			<section class=titled-group>
+					<header>Read</header>
+					<a href=#/wealth.html>Wealth</a>
+					<a href=#/crypto.html>Crypto</a>
+					<a href=#/hyperdrive.html>Hyperdrive</a>
+					<a href=#/prognosis.html>Prognosis</a>
+					<a href=#/climatechanged.html>Climate Changed</a>
+					<a href=#/equality.html>Equality</a>
+					<a href=#/billionaires.html>Billionaires</a>
+					<a href=#/graphics.html>Graphics</a>
+					<a href=#/sponsoredcontent.html>Sponsored Content</a>
+			</section>
+			<section class=titled-group>
+					<header>Watch</header>
+					<a href=#/thedavidrubensteinshow.html>The David Rubenstein Show</a>
+					<a href=#/brilliantideas.html>Brilliant Ideas</a>
+					<a href=#/inspirego.html>Inspire GO</a>
+			</section>
+		</div>
+		<div class=column>
+			<section class=titled-group>
+					<header>Special Reports</header>
+					<a href=#/wheretoinvest$10,000.html>Where to Invest $10,000</a>
+					<a href=#/50companiestowatchin2018.html>50 Companies to Watch in 2018</a>
+					<a href=#/whatsinsidealltheiphones.html>What's Inside All the iPhones</a>
+			</section>
+		</div>
+	</article>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+<!--  -->
+
+			<div class="nav__aside" hidden>
+				<ul class="nav__menuList">
+					<li class="nav__menuItem">
+						<a href="#" class="nav__menuLink">
+						<span class="nav__menuLink-icon icon">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" class="icon icon--menu" width="24" height="24" fill="none" data-src="https://s41917.cdn.ngenix.net/upload/header-main-menu-icons/Tiles.svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M22.391.925H3.61A2.687 2.687 0 00.925 3.609V22.39a2.687 2.687 0 002.684 2.684H22.39a2.687 2.687 0 002.684-2.684V3.61A2.687 2.687 0 0022.391.925zM2.641 3.609a.97.97 0 01.968-.969h8.533v3.364l-6.138 6.138H2.64V3.61zm9.501 19.75H3.61a.97.97 0 01-.969-.968v-8.533h3.364l6.138 6.138v3.364zM7.572 13L13 7.572 18.428 13 13 18.428 7.572 13zm15.788 9.391a.97.97 0 01-.969.969h-8.533v-3.364l6.138-6.138h3.364v8.533zm0-10.249h-3.364l-6.138-6.138V2.64h8.533a.97.97 0 01.969.969v8.533z"></path>
+						</svg>
+					</span>
+					<span class="nav__menuLink-text">Плитка</span>
+				</a>
+				<div class="nav__mainWrap">
+				<ul class="nav__main">
+					<li class="nav__contentLink">
+						<a href="" class="nav__nav__mainSubLink">Керамическая плитка</a>
+						<ul class="nav__mainSub">
+							<li class="nav__mainLink"> 
+								laparet
+							</li>
+							<li class="nav__mainLink"> 
+								Keramamazz
+							</li>
+							<li class="nav__mainLink"> 
+								Cersoint
+							</li>
+							<li class="nav__mainLink"> 
+								Inter Cera
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			</li>
+
+			<li class="nav__menuItem"><a href="#" class="nav__menuLink">
+				<span class="nav__menuLink-icon icon">
+					<svg class="icon icon--menu" width="24" height="24" viewBox="0 0 72 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M21.314 1.41676C19.562 2.17876 16.997 4.52376 15.614 6.62776C12.716 11.0388 0 55.2488 0 60.9158C0 66.8198 3.809 73.1048 8.962 75.7028C19.399 80.9658 33 75.4498 33 65.9528C33 62.0068 29.97 57.8418 25.684 55.8958C20.273 53.4398 16.495 53.4578 14 55.9528C11.454 58.4988 11.454 61.4068 14 63.9528C16.796 66.7488 18 66.4488 18 62.9528C18 59.1838 20.677 58.9108 24.596 62.2818C30.273 67.1648 23.809 73.2648 14.756 71.5668C9.253 70.5348 6.5 66.8078 6.5 60.3918C6.5 55.6888 6.899 54.5918 9.593 51.8978C11.666 49.8258 14.02 48.6258 16.727 48.2628C24.048 47.2808 27.638 49.3218 39 60.9248C49.95 72.1068 54.718 74.9528 62.505 74.9528V74.9528C64.3022 74.9528 65.817 73.612 66.0351 71.828L68.374 52.7028C69.87 40.4648 71.336 29.0568 71.631 27.3518V27.3518C71.9209 25.6739 70.7294 24.1014 69.0357 23.9266L66.711 23.6868C59.573 22.9498 53.92 19.9718 49.819 14.7868C47.994 12.4788 44.699 8.69876 42.497 6.38676C36.738 0.339756 28.328 -1.63324 21.314 1.41676ZM34.506 7.52276C36.332 8.38876 39.762 11.7738 42.158 15.0718C46.917 21.6248 53.049 26.0818 60 28.0438C62.475 28.7418 64.645 29.4148 64.822 29.5388C65.451 29.9778 60.686 66.4678 59.883 67.3698C58.155 69.3098 50.834 64.4338 42.675 55.9088C38.057 51.0838 32.386 46.1698 30.071 44.9888C24.836 42.3188 17.191 41.3418 12.988 42.8068C10.507 43.6718 9.902 43.6448 10.263 42.6858C10.519 42.0078 12.41 35.3778 14.467 27.9528C18.518 13.3298 19.202 11.6028 22.299 8.20276C24.758 5.50376 29.674 5.22976 34.506 7.52276Z" fill="black"/>
+						</svg>
+						
+			</span>
+			<span class="nav__menuLink-text">Обои</span>
+		</a>
+	</li>
+	
+			<li class="nav__menuItem"><a href="#" class="nav__menuLink">
+				<span class="nav__menuLink-icon icon">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon icon--menu" width="24" height="24" fill="none" data-src="https://s41917.cdn.ngenix.net/upload/header-main-menu-icons/ic-santehnika.svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M22.6 7.91c-.835-.67-1.689-.743-2.26-.738H8.906V5.625a.946.946 0 01.88-.935l7.207-.704a1.99 1.99 0 001.804-1.988A2 2 0 0016.799 0H5.625A5.631 5.631 0 000 5.625v17.438c0 .517.42.937.938.937h7.078c.517 0 .937-.42.937-.938v-2.296a.937.937 0 10-1.875 0v1.359H1.875V9.047h18.477c.482-.004.773.084 1.073.325.438.352.7.913.7 1.502v1.005l-.528.872h-.96l-.663-1.096a.938.938 0 00-.802-.452l-11.156.002a.937.937 0 00-.938.937v3.936a.937.937 0 101.875 0V13.08h9.69l.665 1.095c.17.28.473.452.801.452h2.016a.937.937 0 00.802-.452l.937-1.548a.936.936 0 00.136-.485v-1.268c0-1.168-.51-2.248-1.4-2.963zM7.778 3.719a2.8 2.8 0 00-.748 1.906v1.547H1.875V5.625a3.754 3.754 0 013.75-3.75h11.174a.123.123 0 01.012.245l-7.201.703a2.815 2.815 0 00-1.831.896z"></path></svg>
+					</span>
+			<span class="nav__menuLink-text">Сантехника</span>
+		</a>
+	</li>
+
+<li class="nav__menuItem"><a href="#" class="nav__menuLink">
+		<span class="nav__menuLink-icon icon">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon icon--menu" width="24" height="24" fill="none" data-src="https://s41917.cdn.ngenix.net/upload/header-main-menu-icons/Furniture.svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M12.998 8h-2a3 3 0 01-3-3 1 1 0 112 0 1 1 0 001 1h2a1 1 0 001-1 1 1 0 112 0 3 3 0 01-3 3zM15 15a1 1 0 00-1 1 1 1 0 01-1 1h-2a1 1 0 01-1-1 1 1 0 10-2 0 3 3 0 003 3h2a3 3 0 003-3 1 1 0 00-1-1z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M20.996 0H3.003A3.003 3.003 0 00.001 3.004V11.995L0 12v8.996A3.003 3.003 0 003.004 24h17.993A3.004 3.004 0 0024 20.995V3.004A3.004 3.004 0 0020.996 0zM3.003 2h17.993C21.551 2 22 2.45 22 3.004V11H2V3.004C2 2.449 2.45 2 3.003 2zm17.993 20H3.003C2.45 22 2 21.55 2 20.996V13h20v7.996C22 21.55 21.55 22 20.996 22z"></path></svg>
+	</span>
+	<span class="nav__menuLink-text">Мебель для ванной</span>
+</a>
+</li>
+
+<li class="nav__menuItem"><a href="#" class="nav__menuLink">
+	<span class="nav__menuLink-icon icon">
+		<svg class="icon icon--menu" width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M22.816 1.183C22.095.46 21.1.043 20.015.003c-1.03-.04-2.085.25-3.04.836a.893.893 0 00-.298 1.23.893.893 0 001.229.298c1.298-.796 2.796-.761 3.641.085.498.497.727 1.219.642 2.03-.09.88-.522 1.746-1.219 2.442-.696.697-1.567 1.13-2.443 1.22-.81.079-1.532-.15-2.03-.642a1.713 1.713 0 00-2.413 0 1.693 1.693 0 00-.497 1.209c0 .457.18.885.503 1.209a1.714 1.714 0 002.602-.224c.472.169.98.258 1.517.258.164 0 .333-.01.502-.024.015 0 .03-.005.045-.005l.154 2.233a1.778 1.778 0 01-.512 1.369l-8.343 8.334a1.207 1.207 0 01-1.702 0L2.14 15.646a1.197 1.197 0 010-1.701l8.339-8.34a1.76 1.76 0 011.363-.512l7.408.493a.897.897 0 10.12-1.791l-7.409-.493a3.536 3.536 0 00-2.746 1.035L.876 12.676A2.973 2.973 0 000 14.796c0 .8.313 1.552.876 2.119l6.209 6.21a3.003 3.003 0 004.239 0l8.338-8.34a3.558 3.558 0 001.035-2.756l-.18-2.617a6.32 6.32 0 001.727-1.224c.985-.985 1.602-2.239 1.731-3.527.134-1.359-.279-2.593-1.16-3.478z"></path></svg>
+	</span>
+<span class="nav__menuLink-text">Бренды</span>
+</a>
+</li>
+
+
+
+
+
+
+			</ul>
+			</div>
+		</div>
+	</div>
+</nav>
+
+
+
+
+
+
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<input id=bmenu_toggle type=checkbox name=bmenu-open class=hidden>
+<label class="bmenu toggle" for=bmenu_toggle accesskey=1>
+  <header><span class=heavy>&#x2630;</span> Menu</header>
+</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+</div>	
+</body>
+</html>
